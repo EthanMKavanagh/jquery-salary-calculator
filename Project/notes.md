@@ -2,7 +2,7 @@ Week 1 - Weekend Assignment
 
 Base Mode Checklist:
 [x] - Source JS and JQ
-[] - Inputs: employee first name, employee last name, job  title, annual salary
+[x] - Inputs: employee first name, employee last name, ID number, job  title, annual salary, submit button
 [] - Submit button to collect input information
 [] - calculate costs
 [] - addend to DOM
