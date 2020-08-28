@@ -4,7 +4,7 @@ Base Mode Checklist:
 [x] - Source JS and JQ
 [x] - Inputs: employee first name, employee last name, ID number, job  title, annual salary, submit button
 [x] - add table
-[] - Submit button to collect input information
+[x] - Submit button to collect input information
 [] - calculate costs
 [] - addend to DOM
 [] - clear inputs
