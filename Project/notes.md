@@ -10,7 +10,7 @@ Base Mode Checklist:
 [x] - clear inputs
 [] - If total monthly exceeds $20,000, then add red background to monthly cost
 [x] - create remove button
-[] - remove employee for DOM
+[x] - remove employee for DOM
 
 Stretch Goals Checklist:
 [] - add extra styling

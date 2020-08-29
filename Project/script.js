@@ -89,5 +89,6 @@ function totalMonthly(){
 } // end totalMonthly
 
 function removeButton(){
-    console.log( 'remove' );
+    // Remove employee from table, visit: https://www.geeksforgeeks.org/how-to-dynamically-add-remove-table-rows-using-jquery/
+    $(this).closest('tr').remove()
 } // end removeButton
