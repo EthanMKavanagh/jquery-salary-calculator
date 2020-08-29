@@ -1,3 +1,72 @@
+/* heading */
 h1 {
+    color: white;
+    background-color: gray;
+    text-align: center;
+    padding-top: 20px;
+    height: 70px;
+}
+
+h2 {
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+hr {
+    margin-top: 30px;
+}
+
+/* all table related aspects */
+table {
+    border-collapse: collapse;
+    margin-left: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    width: 200px;
+    font-weight: normal;
+    padding: 5px;
+}
+
+th {
     background-color: lightgray;
+}
+
+/* inputs
+ */
+.employeeFirst, .employeeLast, .employeeId, .employeeTitle, .employeeSalary {
+    border: 1px solid black;
+    margin-right: 5px;
+}
+
+.employeeFirst {
+    margin-left: 10px;
+}
+
+/* submit button */
+.button {
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-left: 742px;
+}
+
+/* annual salary spot on table */
+.tableSalary {
+    text-align: right;
+}
+
+/* remove button spot on table */
+.tableRemove {
+    text-align: center;
+}
+
+/* monthly total budget */
+.monthlyTotal {
+    text-align: right;
+    margin-right: 150px;
 }

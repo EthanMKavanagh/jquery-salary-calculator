@@ -8,10 +8,10 @@ Base Mode Checklist:
 [x] - append to DOM
 [x] - calculate costs
 [x] - clear inputs
-[] - If total monthly exceeds $20,000, then add red background to monthly cost
+[x] - If total monthly exceeds $20,000, then add red background to monthly cost
 [x] - create remove button
 [x] - remove employee for DOM
 
 Stretch Goals Checklist:
-[] - add extra styling
+[x] - add extra styling
 [] - when remove button is clicked, remove employees salary from total ( this will use .text(), and jQuery's .data() function! )

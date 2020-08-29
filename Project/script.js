@@ -55,7 +55,7 @@ function displayEmployees(){
                 <td class="tableId">#${employee[ i ].id}</td>
                 <td class="tableTitle">${employee[ i ].title}</td>
                 <td class="tableSalary">$${employee[ i ].salary}</td>
-                <td class="tableRemove"><button class="removeButton">Remove</button></td>
+                <td class="tableRemove"><button class="removeButton">Delete</button></td>
             </tr>
         `)
 
@@ -84,8 +84,12 @@ function totalMonthly(){
         // empty element
         el.empty();
         // append and round the hundredths place
-        el.append( Math.round( totalCosts * 100) / 100 );
+        el.append( ' $', Math.round( totalCosts * 100) / 100 );
     } // end for
+
+    if( totalCosts >= 20000 ){
+        $( '.monthlyTotal' ).css( 'background-color', 'red' );
+    }
 } // end totalMonthly
 
 function removeButton(){
