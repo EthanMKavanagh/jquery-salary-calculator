@@ -5,9 +5,9 @@ Base Mode Checklist:
 [x] - Inputs: employee first name, employee last name, ID number, job  title, annual salary, submit button
 [x] - add table
 [x] - Submit button to collect input information
+[x] - append to DOM
 [] - calculate costs
-[] - addend to DOM
-[] - clear inputs
+[x] - clear inputs
 [] - If total monthly exceeds $20,000, then add red background to monthly cost
 [] - create remove button
 [] - remove employee for DOM
