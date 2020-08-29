@@ -46,6 +46,7 @@ function submitButton(){
     //Display annual salary on DOM
     $( '.tableSalary' ).append( '$', annualSalary );
 
+    // Clear inputs after clicking submit button
     $( '.employeeFirst' ).val( '' );
     $( '.employeeLast' ).val( '' );
     $( '.employeeId' ).val( '' );
@@ -53,11 +54,11 @@ function submitButton(){
     $( '.employeeSalary' ).val( '' );
 
     // Calling function that will add up the monthly total
-    //annualSalaryAdding();
+    // annualSalaryAdding();
 } // end submitButton
 
 
- /* COME BACK TO! function annualSalaryAdding(){
+ /*function annualSalaryAdding(){
     // Grabbing the annual salary number (string)
     let tableSalary = $( '.tableSalary' ).text();
     console.log( tableSalary );
@@ -101,7 +102,7 @@ function tableLayout(){
                 <th>Annual Salary</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="tableBody">
             <tr>
                 <td class="tableFirstName"></td>
                 <td class="tableLastName"></td>
