@@ -3,11 +3,11 @@ Week 1 - Weekend Assignment
 Base Mode Checklist:
 [x] - Source JS and JQ
 [x] - Inputs: employee first name, employee last name, ID number, job  title, annual salary, submit button
-[] - add table
-[] - Submit button to collect input information
-[] - append to DOM
+[x] - add table
+[x] - Submit button to collect input information
+[x] - append to DOM
 [] - calculate costs
-[] - clear inputs
+[x] - clear inputs
 [] - If total monthly exceeds $20,000, then add red background to monthly cost
 [] - create remove button
 [] - remove employee for DOM

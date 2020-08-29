@@ -52,5 +52,12 @@ function displayEmployees(){
                 <td class="tableSalary">${employee[ i ].salary}</td>
             </tr>
         `)
+
+    // Clear inputs
+    $( '.employeeFirst' ).val( '' );
+    $( '.employeeLast' ).val( '' );
+    $( '.employeeId' ).val( '' );
+    $( '.employeeTitle' ).val( '' );
+    $( '.employeeSalary' ).val( '' );
     } // end for
 } // end displayEmployees
