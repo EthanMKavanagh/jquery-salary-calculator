@@ -1,82 +1,10 @@
 $( document ).ready( onReady );
 
+employee = [];
+
 function onReady(){
-    //HTML layouts called first
-    inputLayout();
-    tableLayout();
-    totalMonthlyLayout();
-
-    //Click events
-    $( 'body' ).on( 'click', '.button', submitButton );
-} // end onReady
-
-function submitButton(){
-    //Get first name input val
-    let firstName = $( '.employeeFirst' ).val();
-    //Console.log
-    console.log( 'First Name:', firstName );
-    //Display first name on DOM
-    $( '.tableFirstName' ).append( firstName );
-
-    //Get last name input val
-    let lastName = $( '.employeeLast' ).val();
-    //Console.log
-    console.log( 'Last Name:', lastName );
-    //Display last name on DOM
-    $( '.tableLastName' ).append( lastName );
-
-    //Get ID input val
-    let iD = $( '.employeeId' ).val();
-    //Console.log
-    console.log( 'ID:', iD );
-    //Display ID on DOM
-    $( '.tableId' ).append( iD );
-
-    //Get title input val
-    let title = $( '.employeeTitle' ).val();
-    //Console.log
-    console.log( 'Title:', title );
-    //Display title on DOM
-    $( '.tableTitle' ).append( title );
-
-    //Get annual salary input val
-    let annualSalary = $( '.employeeSalary' ).val();
-    //Console.log
-    console.log( 'Annual Salary:', annualSalary );
-    //Display annual salary on DOM
-    $( '.tableSalary' ).append( '$', annualSalary );
-
-    // Clear inputs after clicking submit button
-    $( '.employeeFirst' ).val( '' );
-    $( '.employeeLast' ).val( '' );
-    $( '.employeeId' ).val( '' );
-    $( '.employeeTitle' ).val( '' );
-    $( '.employeeSalary' ).val( '' );
-
-    // Calling function that will add up the monthly total
-    // annualSalaryAdding();
-} // end submitButton
-
-
- /*function annualSalaryAdding(){
-    // Grabbing the annual salary number (string)
-    let tableSalary = $( '.tableSalary' ).text();
-    console.log( tableSalary );
-    $( 'totalMonthly' ).append(`
-
-    `)
-
-
-} // end annualSalaryAdding
-*/
-
-
-
-function inputLayout(){
-    //Appending the inputs into HTML
+    // append inputs to DOM
     $( '.form' ).append(`
-        <h1 class="heading">Salary Calculator</h1>
-        <h2>Add Employee</h2>
         <div>
             <input class="employeeFirst" type="text" placeholder="First Name"/>
             <input class="employeeLast" type="text" placeholder="Last Name"/>
@@ -86,39 +14,80 @@ function inputLayout(){
         </div>
         <button class="button">Submit</button>
     `)
-} // end inputField
+    // add button
+    $( 'body' ).on( 'click', '.button', addEmployee );
+    // remove button
+    $( 'body' ).on( 'click', '.tableRemove', removeButton );
+} // end onReady
 
-function tableLayout(){
-    //Appending the table in HTML
-    $( '.data' ).append(`
-    <h2>Employees</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Annual Salary</th>
-            </tr>
-        </thead>
-        <tbody class="tableBody">
-            <tr>
-                <td class="tableFirstName"></td>
-                <td class="tableLastName"></td>
-                <td class="tableId"></td>
-                <td class="tableTitle"></td>
-                <td class="tableSalary"></td>
-                <td class="tableRemoveButton"></td>
-            </tr>
-        </tbody>
-    </table>
-    `)
-} // end tableLayout
+function addEmployee(){
+    console.log( 'in addEmployee' );
+    // create new object
+    const newEmployeeObj = {
+        firstName: $( '.employeeFirst' ).val(),
+        lastName: $( '.employeeLast' ).val(),
+        id: $( '.employeeId' ).val(),
+        title: $( '.employeeTitle' ).val(),
+        salary: $( '.employeeSalary' ).val()
+    } // end newEmployeeObj
+    employee.push( newEmployeeObj );
+    console.log( 'employees (employee array):', employee )
 
-function totalMonthlyLayout(){
-    //Appending the total monthly amount in HTML
-    $( '.monthlyTotal' ).append(`
-        <h2>Total Monthly: $<span class="totalMonthly"></span></h2>
-    `)
+    // display inventory
+    displayEmployees();
+    // calculate total monthly
+    totalMonthly();
+} // end addEmployee
+
+function displayEmployees(){
+    console.log( 'in displayEmployees' );
+    // target table body in DOM
+    let el = $( '#tBody' );
+    // empty el
+    el.empty();
+    // loop through employee array
+    for ( let i = 0; i < employee.length; i++ ){
+        // append table rows
+        el.append(`
+            <tr>
+                <td class="tableFirstName">${employee[ i ].firstName}</td>
+                <td class="tableLastName">${employee[ i ].lastName}</td>
+                <td class="tableId">#${employee[ i ].id}</td>
+                <td class="tableTitle">${employee[ i ].title}</td>
+                <td class="tableSalary">$${employee[ i ].salary}</td>
+                <td class="tableRemove"><button class="removeButton">Remove</button></td>
+            </tr>
+        `)
+
+    // Clear inputs
+    $( '.employeeFirst' ).val( '' );
+    $( '.employeeLast' ).val( '' );
+    $( '.employeeId' ).val( '' );
+    $( '.employeeTitle' ).val( '' );
+    $( '.employeeSalary' ).val( '' );
+    } // end for
+} // end displayEmployees
+
+function totalMonthly(){
+    // declare variable
+    let totalCosts = 0;
+    // loop through array
+    for( let i = 0; i < employee.length; i++ ){
+        // convert salary to a number
+        let annualPay = Number( employee[ i ].salary );
+        // divide annual pay to monthly pay
+        let monthlyPay = annualPay/12;
+        // add monthly pay to variable
+        totalCosts += monthlyPay
+        // target element
+        let el = $( '.totalMonthly' );
+        // empty element
+        el.empty();
+        // append and round the hundredths place
+        el.append( Math.round( totalCosts * 100) / 100 );
+    } // end for
 } // end totalMonthly
+
+function removeButton(){
+    console.log( 'remove' );
+} // end removeButton

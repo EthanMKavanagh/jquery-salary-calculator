@@ -6,10 +6,10 @@ Base Mode Checklist:
 [x] - add table
 [x] - Submit button to collect input information
 [x] - append to DOM
-[] - calculate costs
+[x] - calculate costs
 [x] - clear inputs
 [] - If total monthly exceeds $20,000, then add red background to monthly cost
-[] - create remove button
+[x] - create remove button
 [] - remove employee for DOM
 
 Stretch Goals Checklist:
