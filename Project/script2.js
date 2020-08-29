@@ -30,8 +30,11 @@ function addEmployee(){
     } // end newEmployeeObj
     employee.push( newEmployeeObj );
     console.log( 'employees (employee array):', employee )
+
     // display inventory
     displayEmployees();
+    // calculate total monthly
+    totalMonthly();
 } // end addEmployee
 
 function displayEmployees(){
@@ -61,3 +64,23 @@ function displayEmployees(){
     $( '.employeeSalary' ).val( '' );
     } // end for
 } // end displayEmployees
+
+function totalMonthly(){
+    // declare variable
+    let totalCosts = 0;
+    // loop through array
+    for( let i = 0; i < employee.length; i++ ){
+        // convert salary to a number
+        let annualPay = Number( employee[ i ].salary );
+        // divide annual pay to monthly pay
+        let monthlyPay = annualPay/12;
+        // add monthly pay to variable
+        totalCosts += monthlyPay
+        // target element
+        let el = $( '.totalMonthly' );
+        // empty element
+        el.empty();
+        // append and round the hundredths place
+        el.append( Math.round( totalCosts * 100) / 100 );
+    } // end for
+} // end totalMonthly
