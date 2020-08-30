@@ -36,8 +36,7 @@ th {
     background-color: lightgray;
 }
 
-/* inputs
- */
+/* inputs */
 .employeeFirst, .employeeLast, .employeeId, .employeeTitle, .employeeSalary {
     border: 1px solid black;
     margin-right: 5px;
